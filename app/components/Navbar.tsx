@@ -13,23 +13,23 @@ export const Navbar = () => {
         {/* Logo Image */}
         <Link href="/">
           <Image
-            src="/1.jpg" 
+            src="/1.jpg"
             alt="Top Building Logo"
-            width={230} 
+            width={230}
             height={50}
-            className="rounded-full object-cover"
+            className="rounded-full object-cover w-32 sm:w-40 md:w-48 lg:w-56"
           />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-4 text-bold">
-          <Link href="/" className="hover:text-gray-300 text-3xl">
+          <Link href="/" className="hover:text-gray-300 text-3xl font-bold">
             Home
           </Link>
-          <Link href="/About" className="hover:text-gray-300 text-3xl">
+          <Link href="/About" className="hover:text-gray-300 text-3xl font-bold">
             About
           </Link>
-          <Link href="/Contact" className="hover:text-gray-300 text-3xl">
+          <Link href="/Contact" className="hover:text-gray-300 text-3xl font-bold">
             Contact
           </Link>
         </div>
@@ -47,14 +47,14 @@ export const Navbar = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden mt-4 space-y-2 text-center">
-          <Link href="/" className="block hover:text-gray-300 text-x1">
+        <div className="md:hidden space-y-2 text-center mt-10 ">
+          <Link href="/" className="block hover:text-gray-300 text-2xl mb-5">
             Home
           </Link>
-          <Link href="/About" className="block hover:text-gray-300 text-xl">
+          <Link href="/About" className="block hover:text-gray-300 text-2xl mb-5">
             About
           </Link>
-          <Link href="/Contact" className="block hover:text-gray-300 text-xl">
+          <Link href="/Contact" className="block hover:text-gray-300 text-2xl mb-5">
             Contact
           </Link>
         </div>

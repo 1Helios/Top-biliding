@@ -1,103 +1,88 @@
-"use client";
-import { useState } from "react";
+import React from "react";
 
-export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", form);
-    // You can add form submission logic here (e.g., API call)
-  };
-
+const page = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-6">
-      <div className="max-w-3xl mx-auto bg-white p-8 shadow rounded-lg">
-        <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">
+    <section className="bg-gray-100 min-h-screen py-24 px-6 sm:px-12 lg:px-24">
+      <div className="max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
           Contact Us
         </h1>
-        <p className="text-center text-gray-600 mb-8 text-2xl">
-          We&apos;d love to hear from you! Please fill out the form below and
-          We&apos;ll get in touch.
+        <p className="text-lg sm:text-3xl text-gray-700 mb-12 font-semibold">
+          We&apos;d love to hear from you. Reach out using any of the methods
+          below.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label className="block text-gray-700 mb-2 text-2xl" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800"
-            />
-          </div>
-
-          <div>
-            <label
-              className="block text-gray-700 mb-2 text-2xl"
-              htmlFor="email"
+        <div className="space-y-6 text-left text-gray-800 text-lg sm:text-xl text -center">
+          <div className="text-center">
+            📍{" "}
+            <strong>
+              <p className="text-3xl mb-5 text-center">Address</p>
+            </strong>{" "}
+            <a
+              href="https://www.google.com/maps/place/Top+Build+Industries"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
             >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800"
-            />
+              <p className="text-2xl text-center italic">
+                123 Top Build Avenue, Innovation City, TX 75001
+              </p>
+            </a>
           </div>
 
-          <div>
-            <label
-              className="block text-gray-700 mb-2 text-2xl"
-              htmlFor="message"
+          <div className="text-center">
+            📞{" "}
+            <strong>
+              <p className="text-3xl mb-5 text-center">Phone</p>
+            </strong>{" "}
+            <a href="tel:+1234567890" className="text-blue-600 hover:underline">
+              <p className="text-2xl mb-5 text-center italic">0911-15-12-01</p>
+              <p className="text-2xl text-center italic">0911-15-12-01</p>
+            </a>
+          </div>
+
+          <div className="text-center">
+            <span className="bg-black text-white p-2 rounded">✉️</span>{" "}
+            <strong className="text-3xl text-center block">Email</strong>{" "}
+            <a
+              href="mailto:heliossanta@gmail.com"
+              className="text-blue-600 hover:underline"
             >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              rows={5}
-              required
-              className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            ></textarea>
+              <p className="text-2xl mb-5 text-center italic">
+                heliossanta@gmail.com
+              </p>
+              <p className="text-2xl mb-5 text-center italic">
+                contact@topbuild.com
+              </p>
+            </a>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-gray-800 text-white py-3 rounded hover:bg-gray-600 transition"
-          >
-            <h3 className="text-2xl font-bold">Send Message</h3>
-          </button>
-        </form>
-
-        {/* Optional Contact Info */}
-        <div className="mt-10 text-center text-gray-800">
-          <p className="text-base sm:text-lg md:text-2xl font-bold italic break-words">
-            abatemesfin@gmail.com
-          </p>
-
-          <p className="text-base sm:text-lg md:text-2xl font-bold italic break-words">
-            Phone: 0911-15-12-01
-          </p>
+          <div className="text-center text-2xl">
+            🌐{" "}
+            <strong>
+              <p className="text-3xl mb-5">Follow us</p>
+            </strong>{" "}
+            <a
+              href="https://www.linkedin.com/company/top-build"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              <p className="text-2xl mb-5  italic">LinkedIn</p>
+            </a>{" "}
+            <a
+              href="https://www.instagram.com/topbuild"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              <p className="text-2xl italic">Instagram</p>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default page;
